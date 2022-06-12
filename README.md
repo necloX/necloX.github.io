@@ -6,4 +6,4 @@ Programming languages have evolved according to the needs of their original user
 
 However, programming languages, and among them proof assistants, are designed and implemented by CS people. To make sure that the inputs of mathematicians are as efficient as possible, it would be great if mathematicians had a basic knowledge of how these systems work behind the scene. 
 
-In this blog, I will document what I learn along this journey in the world of programming languages and their implementations. So far, I would say that the first thing I learned was that there is a way more PL design in doing maths that one mmight think !
+In this blog, I will document what I learn along this journey in the world of programming languages and their implementations. So far, I would say that the first thing I learned was that there is way more PL design in doing maths that one mmight think !
