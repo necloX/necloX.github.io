@@ -1,3 +1,4 @@
+# Programming language concepts, big or small
 Considers the folowing Lean piece of code :
 ```
 inductive Nat:Type
