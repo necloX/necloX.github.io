@@ -1,5 +1,5 @@
 # Programming language concepts, big or small
-Considers the folowing Lean piece of code :
+Considers the folowing piece of Lean code :
 ```
 inductive Nat:Type
 | Zero : Nat
