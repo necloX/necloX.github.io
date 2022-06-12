@@ -1,5 +1,5 @@
 Considers the folowing Lean piece of code :
-
+```
 inductive Nat:Type
 | Zero : Nat
 | Succ : Nat->Nat
@@ -11,23 +11,14 @@ inductive Eq : Nat -> Nat → Prop
 def AddZeroLeft : ∀ n:Nat, Eq (Add Nat.Zero n) n
 | Nat.Zero := Eq.Refl Nat.Zero
 | (Nat.Succ m) := Eq.Refl (Nat.Succ m)
-
-It is a minimal exemple of what people do in Lean. Here we declare a data structure (the natural numbers), an operation on this data structure (sum), a dependent type (the identity)
-and we prove a theorem regarding these three things (the fact that adding zero does nothing).
-
-Programmers refer to this style of programming style as "functional". In this particular brand of functional programming (FP), we work essentialy in two steps :
-- We declare types (keyword "inductive"), by explaining to the system how to make instance of these types. The system then infers from this how to use these instances
-- We define functions. The system verify that in doing so we respect the rules imposed by the types we have.
-
-The "functional" part refers to the fact that here, functions are "first class citizen", meaning among other things that functions themselves can be passed as argument of other functions.
-Other common features of FP languages are closure and pattern matching. Pattern matching in particular is a really powerful tool that has been widely adopted by mainstream languages (see [Pattern matching in c#](hhttps://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/pattern-matching)
-
-These notions are quiet common among mathemations interested in formalization. Here I will try to introduce some PL concepts that are, right now, less likely to find their way in a proof assistant. If it is for better or worse is for you to judge.
+```
+It is a minimal exemple of what people do in Lean.
+Programmers refer to this style of programming as "functional". If you are interested in formalization, you are potentially already well verse in the wordl of functional programing (FP).  Here I am interested in introducing you to some programming languages (PL) concepts that are, right now, less likely to find their way in a proof assistant. If it is for better or worse is for you to judge.
 
 Disclaimer : here formalization of mathematics refers particularly to formalization in dependtly typed programming languages (Lean, Agda, Coq…) There are other way people erg. 
 Also I am neither a type theorist or a PL design professional, just a mathematician enthousiast about these topics !
 
-Classes
+# Classes
 Objects are the obvious absents in the world dependently typed programming, which is based on functional programming (FP).
 It is often assumed that for multiples reason, FP is the natural paradigm toward mathematicians should gravitate. However, I think 
 objects, and especially classes, belong … In functional programming you gives ways to map into a type (the constructors)
