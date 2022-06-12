@@ -1,4 +1,4 @@
-# neclo'blog
+# neclo's blog
 ## CS things for (non CS) mathematicians
 
 I believe proof assistants are the most important things happening in the world of mathematics. Programming languages and their implementations play a central role in this endeavor. Regarding practices, goals, and preferences, mathematicians arrive pretty late to the party. 
