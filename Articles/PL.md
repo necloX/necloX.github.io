@@ -1,4 +1,4 @@
-# Some programming language concepts, big and small
+# Some programming language concepts
 Consider the folowing piece of Lean code :
 ```
 inductive Nat:Type
