@@ -17,7 +17,7 @@ Disclaimer : here formalization of mathematics refers particularly to formaliza
 It is often assumed that for multiples reason, FP is the natural paradigm toward mathematicians should gravitate. However, I think 
 **objects**, and especially **classes** could be quiet useful. Classes allows you to bundle an essential set of functionality (**methods**) with a type. For instance, in C#, one could write a pretty similar program that our Lean exemple that way :
 
-'''
+```
 abstract class Nat
 {
     public abstract Nat Add(Nat other);
@@ -40,12 +40,12 @@ public class Succ : Nat
         return new Succ(prec.Add(other));
     }
 }    
-'''
+```
 Now, the former Lean inductive type Nat become modelized through an abstract class and **inheritance** relation ship. That way we require in the "Nat" class that natural number suport an "Add" operation. Remark that here, **pattern matching** is replaced with **ad hoc polymorphism**, through the "override" keyword.
 
 Inheritance allow the user to specify an "is a" relationship. This result in a world of difference with an inductive type : users can always create new classes that inherit from Nat, as long as one provide an implementation of the "Add" methode. This makes pattern matching harder to work with in OOP languages and can mess with the original semantics you had in mind for youre type. However, current trends hints toward an increase integration of pattern matching in mainstream languages. In C# one can use the "sealed" **access modifier** to prevent future users to inherited from a class. One can also simply add a private constructor in the abstract class to require that a class can be inherited inside its own scope, as such :
 
-'''
+```
 abstract class Nat
 {
     public abstract Nat Add(Nat other);
@@ -73,7 +73,7 @@ abstract class Nat
     }
     private Nat() { }
 }
-'''
+```
 With this kind of hack, together with an abstract generic "Match<Nat>" method, one can reproduce pretty acuratly the semantics of our lean code.
 
 # Interfaces and type classes
@@ -88,22 +88,22 @@ Scala 3 propose the export keyword that allow one to use the methods b.m() of a 
 ## Syntax design
 
 Syntax designs is often considers as less interesting that semantics for instance, and regarding programing in genereal, this is more or less for good reasons. However, there has been [some research on the matter](https://dl.acm.org/doi/10.1145/2534973). I our case, where education is at the core of our considerations, it could be more important. For instance in Lean, the type of an identier comes after the identifier itself
-'''
+```
 >a:int=2 
 In a lot of mainstream languages, it's the opposite
 >int a=2;
-'''
+```
 Some argue that having the identifier coming first is better for readability, because types matter less. Of course types matters a lot to mathematicians.
   
 ## Mutability
 In the world of FP languages, value are often **immutable** by default, which means that once a value is assigned to an identifier, this identifier cannot be update with another value. Regarding formalization, it is almost a no brainer. If we have
- '''
+ ```
  inductive Eq : Nat -> Nat → Prop
 | Refl (n:Nat) : Eq n n
 def AddZeroLeft : ∀ n:Nat, Eq (Add Nat.Zero n) n
 | Nat.Zero := Eq.Refl Nat.Zero
 | (Nat.Succ m) := Eq.Refl (Nat.Succ m)
-'''
+```
 The "Eq" would lost all its semantic if we could simply update the value it depends on. However one could argue that a small amount of mutability could be useful, for instance, for epsilon-delta proof, one often has to update the value of epsilon to epsilon/2 to obtain a desired property. This can actually be done safely in a dependant type context [with some constraints](https://drops.dagstuhl.de/opus/volltexte/2018/9218/pdf/LIPIcs-ECOOP-2018-13.pdf).
   
 ## Other interesting features
