@@ -76,7 +76,7 @@ abstract class Nat
 ```
 With this kind of hack, together with an abstract generic "Match<Nat>" method, one can reproduce pretty acuratly the semantics of our lean code.
 
-# Interfaces and type classes
+## Interfaces and type classes
 One of the goal of object oriented programing (OOP) is to ensure **substitution** and **encapsulation**. Among other things this means that you should design youre (OOP) code in such way one could swap out youre classes to other ones as long as the new one provide the same functionality. 
 I think this is a kind of mathematical mindset. Mathematicians are always looking to understand what particular features of the stuffs they work with gave them their properties, in the hope of generalization.
 In Lean, this is achievable with **type classes**. In other languages, the sames space is occupied with **interfaces** or **traits**. Scala in particular offers a powerfull trait system that provide the best of both.
