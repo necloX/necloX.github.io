@@ -10,4 +10,4 @@ In this blog, I will document what I learn along this journey in the world of pr
 
 ___
 
-[Some programming language concepts, big and small](Articles/PL.md)
+[Some programming language concepts](Articles/PL.md)
