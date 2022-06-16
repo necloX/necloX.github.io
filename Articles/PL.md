@@ -87,7 +87,7 @@ Scala 3 propose the export keyword that allow one to use the methods b.m() of a 
   
 ## Syntax design
 
-Syntax designs is often considers as less interesting that semantics for instance, and regarding programing in genereal, this is more or less for good reasons. However, there has been [some research on the matter](https://dl.acm.org/doi/10.1145/2534973). I our case, where education is at the core of our considerations, it could be more important. For instance in Lean, the type of an identier comes after the identifier itself
+Syntax designs is often considers as less interesting that semantics for instance, and regarding programing in genereal, this is more or less for good reasons. However, there has been [some research on the matter](https://dl.acm.org/doi/10.1145/2534973). In our case, where education is at the core of our considerations, it could be more important. For instance in Lean, the type of an identier comes after the identifier itself
 ```
 >a:int=2 
 In a lot of mainstream languages, it's the opposite
